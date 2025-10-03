@@ -3,11 +3,11 @@ package mcp
 import (
 	"encoding/json"
 	"fmt"
+	"internal/tools"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/websocket"
-	"github.com/local/mcp-server/internal/tools"
 )
 
 type Server struct {

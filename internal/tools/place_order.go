@@ -3,9 +3,9 @@ package tools
 import (
 	"context"
 	"encoding/json"
-	"github.com/local/mcp-server/internal/finam"
-	fproto "github.com/local/mcp-server/proto/finam"
+	"internal/finam"
 	"log"
+	"proto/finam"
 )
 
 type placeOrderArgs struct {

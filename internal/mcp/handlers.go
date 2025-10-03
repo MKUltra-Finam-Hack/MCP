@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"log"
 
-	"github.com/local/mcp-server/internal/finam"
+	"internal/finam"
 )
 
 // Шаблон RPC handler через gRPC-клиент

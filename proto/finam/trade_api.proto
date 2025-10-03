@@ -1,5 +1,7 @@
 syntax = "proto3";
 package finam;
+option go_package = "internal/finam;finam";
+
 
 // Аккаунты
 service AccountService {

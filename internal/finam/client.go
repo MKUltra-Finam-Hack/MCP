@@ -4,8 +4,6 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"os"
-
-	fproto "github.com/local/mcp-server/proto/finam"
 )
 
 type Client struct {
