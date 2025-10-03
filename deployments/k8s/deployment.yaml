@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-finam-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-finam-server
+  template:
+    metadata:
+      labels:
+        app: mcp-finam-server
+    spec:
+      containers:
+        - name: mcp-finam-server
+          image: mcp-finam-server:latest
+          ports:
+            - containerPort: 8080
+            - containerPort: 9090
+          env:
+            - name: FINAM_ACCESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: finam-api-token
+                  key: token

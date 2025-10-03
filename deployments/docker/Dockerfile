@@ -1,8 +1,8 @@
 FROM golang:1.22-alpine AS builder
 WORKDIR /src
-COPY go.mod .
+COPY ../../go.mod .
 RUN go mod download
-COPY . .
+COPY ../.. .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /out/mcp-server ./cmd/server
 
 FROM gcr.io/distroless/base-debian12

@@ -1,0 +1,8 @@
+{
+  "dashboard": {
+    "title": "MCP Server Metrics",
+    "panels": [
+      { "type": "graph", "title": "MCP Tool Calls", "targets": [{ "expr": "mcp_tool_calls_total" }] }
+    ]
+  }
+}

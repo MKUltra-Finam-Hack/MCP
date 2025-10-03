@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   mcp:
-    build: .
+    build: ../..
     image: mcp-finam:latest
     environment:
       - SERVER_ADDR=:8080
