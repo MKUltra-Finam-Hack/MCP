@@ -1,25 +1,91 @@
 syntax = "proto3";
-
 package finam;
 
-// Пример Протобаф схемы для ордеров
-message Order {
+// Аккаунты
+service AccountService {
+  rpc GetAccount(GetAccountRequest) returns (GetAccountResponse);
+}
+
+// Рыночные данные
+service MarketDataService {
+  rpc GetQuote(GetQuoteRequest) returns (GetQuoteResponse);
+}
+
+// Ордера
+service OrderService {
+  rpc PlaceOrder(PlaceOrderRequest) returns (PlaceOrderResponse);
+  rpc CancelOrder(CancelOrderRequest) returns (CancelOrderResponse);
+}
+
+// === Типы ===
+
+// Accounts
+message GetAccountRequest {
+  string account_id = 1;
+}
+message GetAccountResponse {
   string id = 1;
+  double balance = 2;
+  double free = 3;
+  double blocked = 4;
+  string currency = 5;
+}
+
+// Market Data
+message GetQuoteRequest {
+  string symbol = 1;
+}
+message GetQuoteResponse {
+  string symbol = 1;
+  double bid = 2;
+  double ask = 3;
+  double last = 4;
+  int64 volume = 5;
+  int64 timestamp = 6;
+}
+
+// Orders
+message PlaceOrderRequest {
+  string account_id = 1;
   string symbol = 2;
   int32 quantity = 3;
   string side = 4;
   double price = 5;
-  string status = 6;
+  string type = 6;
+}
+message PlaceOrderResponse {
+  string order_id = 1;
+  string status = 2; // e.g., ACTIVE/EXECUTED
+}
+message CancelOrderRequest {
+  string order_id = 1;
+}
+message CancelOrderResponse {
+  bool cancelled = 1;
 }
 
-service OrdersService {
-  rpc ListOrders (ListOrdersRequest) returns (ListOrdersResponse);
+// Assets
+service AssetsService {
+  rpc SearchAssets(SearchAssetsRequest) returns (SearchAssetsResponse);
+  rpc GetAsset(GetAssetRequest) returns (GetAssetResponse);
 }
 
-message ListOrdersRequest {
-  string account_id = 1;
+message SearchAssetsRequest {
+  string query = 1;
+  int32 limit = 2;
 }
-
-message ListOrdersResponse {
-  repeated Order orders = 1;
+message SearchAssetsResponse {
+  repeated Asset assets = 1;
+}
+message GetAssetRequest {
+  string symbol = 1;
+}
+message GetAssetResponse {
+  Asset asset = 1;
+}
+message Asset {
+  string symbol = 1;
+  string name = 2;
+  string isin = 3;
+  string board = 4;
 }
