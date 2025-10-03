@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  mcp:
+    build: .
+    image: mcp-finam:latest
+    environment:
+      - SERVER_ADDR=:8080
+      - FINAM_API_BASE_URL=${FINAM_API_BASE_URL:-https://api.finam.ru}
+      - FINAM_ACCESS_TOKEN=${FINAM_ACCESS_TOKEN}
+    ports:
+      - "8080:8080"
+
+
