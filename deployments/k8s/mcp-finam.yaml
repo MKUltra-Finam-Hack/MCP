@@ -1,13 +1,8 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: hack-prod
----
-apiVersion: v1
 kind: Secret
 metadata:
   name: finam-secret
-  namespace: hack-prod
+  namespace: neposvyat-stage
 type: Opaque
 stringData:
   FINAM_SECRET: "eyJraWQiOiIyNGE3ZGJiYy0zYzU0LTQ5NmQtYTkzNC00ZDBlOGZhZmI2NjUiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhcmVhIjoidHQiLCJwYXJlbnQiOiIwNjgxZWM4MS04N2JkLTRjOWItOWExMi0wMDExN2ExZmRiNGQiLCJhcGlUb2tlblByb3BlcnRpZXMiOiJINHNJQUFBQUFBQUFfMjFVeTA3YlFCUUZuQlJrcXhJTWdrb3M2YVpDS2hLdnFsdDdNazVjTXJhWnNjSHB4Z3JFQzlTUTBEeGEwV1hmYjhtTFNtemJMcnJzb3BfUlgtZ3Y5QmVxM3JreklDamRuSFBuem4zTTlUM0p6Si1mcHgtX2JwQ3BHV3ZwZTJWbWFubGlaZHF1M2hTZXFHbURlZ0tOdlQwYXIxeXpLeTdQSW1SQk04V2VtMGprWGU0clpsbk1GUWNzcXlQN0xOV2NZaHdQSk9aRlVVS1JZLUVpSjlRenpBM3ZLSTZEa0JvT0REY05ZNTFZMWpGZUpMcXVTRFZuTHBlYUpUT3NfVjdFTll0VWM2cnZxZWNiVGpRenFwbnJlNVlJWkYtX042dTdPcTZ4N1J2R2ViTm1MZFJzOHBxbVh6UFNmdTdXa0VOWHZ5X1U4MlpoM1p6TnU4T1c4YmYwT1haMWY5bGdoblVfdWFmblNyYWxXbFR1aFpTaVFiMEFNM0lLbTBHSGFNVm9zRlI0YUhEdTNVY2pqQVZ1TlpjMFdLbmFWaTUxcEl4TmdJdzdhMmdrZ3NuMXlZa3ZrMVAyeE5LbnlveEZMSmRsQUpJcDJGRUFSNUFGd0k0Q2RRRWZtVlM4ZnE5RHFncUh4SUxQclFBQ2FDTUE0RXdCWk5KZFJxWnI5NEt3cHNxeU5DT29LVEx0LXp6bllvMVVfQ0IwaWEyUTU3VTBhWkdxSDhINmllVkRxeWtmc3VwTUVLdmhRMG5ZQ3JFQ2xnS2tFTkdrTFFEVnE2bWVCYnNBb0pEQm9WbUZjeGVld3NVdXNXQTdBRnlCREJSd0JUQWRyRVVCV3BLZ2pJa1ZTWmVnZ2hFNUlrVEF5Z2dLR0RGQWJDSkNzM2hicmlGdUlHNUNPRHdKOVV3c1FlSERpTVFqVlpIQ0w1QlkwbzBBbUZRQVY3SU9GUUJ1Zzlsb0FBU1FKQk1ZQk9SQXJLUUdVeWZOWFZKSllDWXdJeWlSdEtCRTZzTDFucG85ZzVTS1VndlJtbEdIeEVlRXVYS3F4bERTSVZvNFJNc0dmUFdhUzdSMGlCWUkwYXBZbmpqWHhTOExfazV1UFMyZFo2WHp2SFJlbE03TDBubFZPcTlMNTAzcHZDMmRkNlh6dm5RLWxNNlAwOS1USnZHYlpYLTI3SVdINF82b1dPMjJoNk44TkdoM2lueDQtS1N3RjYtNERfcmozc2lldS1CXzFPLU9qd3A3OXFLcjNSMmZKeDhQRGctS2kwVnZYUFhycXVUaWhTazdkOG1IZGE5cjFfNWhSd1dkSGR2REIzaWMxOGYtY2RITEQzdWpZbEFNUjJkT2s1S1AtcU4yOTJ6bV9mRkozaDkwaW9GNXhmeWxlaWJXekRJc3V0M19CVF9lV2w4OWFwLTllUkg2d2xqdGtfeWczZXQwaTFYalg3aml4M25tcmtiT19odEVKdTNsYTNjMnQtNnVyZjhGT2VwS1J6d0dBQUEiLCJzY29udGV4dCI6IkNoQUlCeElNZEhKaFpHVmZZWEJwWDNKMUNpZ0lBeElrTkRVeVpqTTVObVF0TjJZM01pMDBaVFpqTFdJeVltUXRNakUzWW1aak1Ua3pNalpqQ2dRSUJSSUFDZ2tJQUJJRmFIUnRiRFVLS0FnQ0VpUmpPREZqWkdFNE1TMDVabUl3TFRFeFpqQXRPVEE0TXkwd01UTm1OamszT1RjNE1qa0tCUWdJRWdFekNnUUlDUklBQ2drSUNoSUZNUzQyTGpRS0tBZ0VFaVF5TkdFM1pHSmlZeTB6WXpVMExUUTVObVF0WVRrek5DMDBaREJsT0daaFptSTJOalV5VFFvVlZGSkJSRVZCVUVsZlMxSkJWRTlUWDFSUFMwVk9FQUVZQVNBQktnZEZSRTlZWDBSQ09nSUlBMG9UQ2dNSWh3Y1NCUWlIb1o0QkdnVUloNWJEQVZnQllBRm9BWElHVkhoQmRYUm8iLCJ6aXBwZWQiOnRydWUsImNyZWF0ZWQiOiIxNzU5NDI0MzM2IiwicmVuZXdFeHAiOiIxNzYxNzcxNjYwIiwic2VzcyI6Ikg0c0lBQUFBQUFBQS93WEJNUXJETUF3QVFBcnBFc2lTSjVTc0FrdFdLMnUwUVpsQ1hUSmxDNDc4eXI0dWQ2OXRYRnpvaWlRTlVLZ0JlMWRJMmgyaXVIUDNobDM1V296THF2Z1dvQlFpc09FS21nUENSNHdzNVNBbTlIOU00L1A4L3ZZNkQ3WFU0d2FuUjlVdlhnQUFBQSIsImlzcyI6InR4c2VydmVyIiwia2V5SWQiOiIyNGE3ZGJiYy0zYzU0LTQ5NmQtYTkzNC00ZDBlOGZhZmI2NjUiLCJ0eXBlIjoiQXBpVG9rZW4iLCJzZWNyZXRzIjoibFkrMDZlUnp2a3E2U1I1V0JkOWpMQT09Iiwic2NvcGUiOiIiLCJ0c3RlcCI6ImZhbHNlIiwic3BpblJlcSI6ZmFsc2UsImV4cCI6MTc2MTc3MTYwMCwic3BpbkV4cCI6IjE3NjE3NzE2NjAiLCJqdGkiOiI0NTJmMzk2ZC03ZjcyLTRlNmMtYjJiZC0yMTdiZmMxOTMyNmMifQ.CeA6di1NCOhnu-RIvXC86QBFbGbf5vqFDWCq7NVzqvmLDSjpxW87nt-Am_PK16_pMfY0HuHCbloacytxlD_69Q"
@@ -16,7 +11,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mcp-finam
-  namespace: hack-prod
+  namespace: neposvyat-stage
 spec:
   replicas: 1
   selector:
@@ -27,10 +22,11 @@ spec:
       labels:
         app: mcp-finam
     spec:
-      imagePullSecrets: []
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: mcp-finam
-          image: mcp-finam:latest
+          image: cr.yandex/crpkfurp5bghicuvvubv/k8s/mcp-finam:latest
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -70,13 +66,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mcp-finam
-  namespace: hack-prod
+  namespace: neposvyat-stage
 spec:
   selector:
     app: mcp-finam
   ports:
     - name: http
-      port: 80
+      port: 8080
       targetPort: 8080
   type: ClusterIP
 ---
@@ -84,7 +80,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mcp-finam-ingress
-  namespace: hack-prod
+  namespace: neposvyat-stage
   annotations:
     kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "http01-clusterissuer"
@@ -106,6 +102,6 @@ spec:
               service:
                 name: mcp-finam
                 port:
-                  number: 80
+                  number: 8080
 
 

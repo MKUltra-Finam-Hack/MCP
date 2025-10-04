@@ -18,6 +18,7 @@ func main() {
 	wsHandler := mcp.NewServer(logger)
 
 	http.HandleFunc("/ws", wsHandler.HandleWebSocket)
+    http.HandleFunc("/mcp", wsHandler.HandleHTTPJSONRPC)
 	http.HandleFunc("/healthz", func(w http.ResponseWriter, _ *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		_, _ = w.Write([]byte("ok"))
