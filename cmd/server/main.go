@@ -1,11 +1,10 @@
 package main
 
 import (
-	finam "internal/finam"
-	mcp "internal/mcp"
-	"log"
-	"net/http"
-	"os"
+    mcp "MCP/internal/mcp"
+    "log"
+    "net/http"
+    "os"
 )
 
 func main() {

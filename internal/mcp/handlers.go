@@ -1,11 +1,11 @@
 package mcp
 
 import (
-	"context"
-	"encoding/json"
-	"log"
+    "context"
+    "encoding/json"
+    "log"
 
-	"internal/finam"
+    "MCP/internal/finam"
 )
 
 // Шаблон RPC handler через gRPC-клиент

@@ -1,0 +1,12 @@
+version: v2
+modules:
+  - path: .
+  - path: third_party/googleapis
+deps: []
+lint:
+  use:
+    - DEFAULT
+breaking:
+  use:
+    - FILE
+
